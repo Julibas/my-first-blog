@@ -14,11 +14,15 @@ def vote(request, question_id):
 	return HttpResponse("You're voting on question %s." % question_id)
 
 
-def index(request):
+def home(request):
 	latest_question_list = Question.objects.order_by('-pub_date')[:5]
-	template = loader.get_template('polls/home.html')
-	context = RequestContext(request, {'latest_question_list': latest_question_list,})
+	info_user = Question.objects.order_by('pub_date')
+	template = loader.get_template('polls/base.html')
+	context = RequestContext(request, {'latest_question_list': latest_question_list})
+	respprint = HttpResponse(template.render(context))
+	print(respprint)
 	return HttpResponse(template.render(context))
+
 
 
 #def home(request):

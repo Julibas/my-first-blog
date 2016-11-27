@@ -12,6 +12,11 @@ class Address(models.Model):
 	def __str__(self):
 		return self.city
 
+#	def street(self):
+#		return self.street
+		
+
+
 class Tarif(models.Model):
 	tarif_name = models.CharField(max_length=30, blank=False)
 	abonplata = models.PositiveIntegerField(blank=False)
@@ -28,7 +33,14 @@ class User(models.Model):
 	def __str__(self):
 		return self.first_name
 
+class Phone_book(models.Model):
+	f_name = models.CharField(max_length=20, blank=False)
+	s_name = models.CharField(max_length=30, blank=True)
+	phone = models.CharField(max_length=40, blank=False)
 
+	def __str__(self):
+		return self.f_name
+	
 
 #	"""docstring for User"""
 #	def __init__(self, arg):

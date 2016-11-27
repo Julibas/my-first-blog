@@ -10,5 +10,36 @@
 	Some txt
 	{{linktodate}}
 </div>
+<div>
+	<h2>This is all users Adress</h2>
+	{{all_users}}<br>
+
+</div>
+<div>
+	<form action="/users/data" method="post" autocomplete="off">
+		<fieldset>
+			<legend>Address book</legend>
+			<label for="contact_name">First name</label>
+			<input type="text" id="contact_name" name="contact_name" autofocus="" placeholder="name"></input>
+			<label for="second_name">Second name</label>
+			<input type="text" id="second_name" name="second_name" placeholder="second name"></input>
+			<label for="phone_number">Phone number</label>
+			<input type="text" id="phone_number" name="phone_number" placeholder="phone num"></input>
+			<input type="submit" value="Send_data"></input>
+		</fieldset>
+	</form>
+</div>
+<div>
+	<form action="/users/all_contacts" method="post">
+		<fieldset>
+			<legend>Show all contacts without search</legend>
+			<input type="submit" value="Show all contacts"></input>
+		</fieldset>
+	</form>
+</div>
+<div>
+	<h3>Here may show all contacts</h3>
+	{{all_phones}}
+</div>
 </body>
 </html>
