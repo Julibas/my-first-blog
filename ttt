@@ -1,0 +1,32 @@
+ if request.POST:
+                username = request.POST['username']
+                password = request.POST['password']
+
+
+
+
+
+<!DOCTYPE html>
+<head>
+        <meta charset="utf-8">
+        <title>Войти</title>
+        <link rel="stylesheet" type="text/css" href="static/css/style.css" />
+        <script type="text/javascript" src="static/js/placeholder.js"></script>
+</head>
+<body>
+
+
+<!--/ vladmaxi top bar -->
+
+        <form id="slick-login", method = 'post'>
+                <label for="username">Логин:</label><input type="text" name="username" id="username" class="placeholder" placeholder="номер договора">
+                <label for="password">Пароль:</label><input type="password" name="password" name = "password" class="placeholder" placeholder="Сложный пароль...">
+                {% if login_error %}
+                        <label class="error">{{ login_error }}</label>
+                {% endif %}
+                <input type="submit" value="ВОЙТИ">
+        </form>
+</body>
+</html>
+
+
